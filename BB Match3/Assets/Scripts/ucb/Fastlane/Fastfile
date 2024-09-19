@@ -1,0 +1,31 @@
+fastlane_version "2.68.0"
+
+ENV["FASTLANE_ITC_TEAM_ID"] = "118712511"
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "ajwr-oflp-esbu-sqpn"
+ENV["FASTLANE_SESSION"] = '---\n- !ruby/object:HTTP::Cookie\n  name: myacinfo\n  value: DAWTKNV323952cf8084a204fb20ab2508441a07d02d3064352f1fee90f459d48cfa870aaca4270018022af618fb4f39e19452bf4436014203459f50bffd2436c681aae96bf6d4368339659eaae189a1f68430554cdb60acc8cd98157a07eaac07465e28ef475a3b87f6e6dcc59454c3ad8a19e738a0761a20bc4b23c37cceacf49373a0e3ecf58174ea5a8e2faa939743e5419c1c4323581827e2ac124012cbae53df6f3f8f235fbebdcde8616d26bb9fc13118bc19542a68d87eb4faedccfff894be1a272ff04946aa6ff253e1089506f35cfb02c76ce16f6652dbe5c9aeecb11d872c39c2e8ba4fb0267845f1412a196d795600325112396a6f4637ef8a782ded1aa2ce1a762b50dd6eb76f8735ffc28e50f1c4772b70fde68bb7201de546da3d37bf224d9956552646c5bd9f78a081466b9e0bc3dad378f1f2e74bf55ede3f1a2afd18a55d1850ef5414d5842e229b39078d00b7bbdecf5536effb467a7882940c21694a95f62505e8069595be06c331080d2c0e24456dcd0b71432062db6e58c0d64b695af3ea6d1d81ad812df90f52c0805d9bc7f5aa63f4c36b7465f911d0f8dd357c686dd7ffebdf23779e9c36c50cb837ffdaa1b5eca018dba2ad5599954e685e3ee491cd4df5848f9d1b12dc6bf07497743288603bdb599360a471c21e913595fb998a6e54eaec8e6e81c51ddf5ffc14cd0df49189c846f87bd79ad78292e2a6a41d121e080df58c5e34c620fe6a9c64ee2585a47V3\n  domain: apple.com\n  for_domain: true\n  path: "/"\n  secure: true\n  httponly: true\n  expires: \n  max_age: \n  created_at: 2024-06-25 13:24:44.733399156 -04:00\n  accessed_at: 2024-06-25 13:24:44.734537741 -04:00\n- !ruby/object:HTTP::Cookie\n  name: DES580a6fad94372197b7bd5ed0b2927dbd8\n  value: HSARMTKNSRVXWFlarU1ujQL5eoQ7Ou66WHAPNpjYkyNcPq/eGVP539OLA/uB0DWbwMWmCrAoVayPN5rkHaLXLTiyf3iQIE+In3JB4mVkEnIhLN8IGVsmhs/0rpcHJvkdINRClW7Mocq9OfacL7EHTbLVIMEujdxsmLy/DUXs+Xd7UOR51Cqy1+3ozLQckwNfJvsB+BYNzV5HXBp0DdhJcIWBhPv9VI9ZPdwkfG7Gh0zznR52+A==SRVX\n  domain: idmsa.apple.com\n  for_domain: true\n  path: "/"\n  secure: true\n  httponly: true\n  expires: \n  max_age: 2592000\n  created_at: 2024-06-24 16:53:47.753631239 -04:00\n  accessed_at: 2024-06-25 13:24:44.213892749 -04:00\n- !ruby/object:HTTP::Cookie\n  name: dqsid\n  value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MTkzMzYyODIsImp0aSI6Im5Uc1pGS2tDby1ZY2J0dVFQVS1wZHcifQ.sNvJFKB54oImzwQhrfIBF41bHC-MqIK6vBmC5owvq3A\n  domain: appstoreconnect.apple.com\n  for_domain: false\n  path: "/"\n  secure: true\n  httponly: true\n  expires: \n  max_age: 1800\n  created_at: &1 2024-06-25 13:24:45.347686148 -04:00\n  accessed_at: *1\n'
+
+ENV["FASTLANE_USER"] = "paintingtears@gmail.com"
+
+#FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD = "ajwr-oflp-esbu-sqpn"
+
+default_platform :ios
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
+
+lane :UploadToTestflight do
+  app_store_connect_api_key(
+    key_id: "AGASWGBFU9",
+    issuer_id: "69a6de93-1e1b-47e3-e053-5b8c7c11a4d1",
+    key_content: "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR1RBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJIa3dkd0lCQVFRZzkrL2xNdzFaRDhjN3EvU0wKL2QxMmFTU0xCZmFtcFNCN3lJV3RTeEdhSi9DZ0NnWUlLb1pJemowREFRZWhSQU5DQUFRR2src0d4Ykt3L0lzYgpaNU1ZQ0hJQjhwcmdlSTYvTHd2T21JdER4TllmMlhuejRjUzJMZnJ3UGdLcWUyYy8xMFNaaXlPc2VzWkZuTCtPCmVvcTU1TGkzCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=",
+    duration: 1200,
+    is_key_content_base64: true
+  )
+  upload_to_testflight(
+    skip_submission: true,
+    app_identifier: "com.MassDigi.BakedBeans",
+    skip_waiting_for_build_processing: true,
+  )
+
+end
